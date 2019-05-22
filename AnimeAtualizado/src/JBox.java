@@ -13,7 +13,7 @@ public class JBox extends JLabel {
 	//private int boxDefaulCoordinateY = 80;
 	private int boxDefaultWidth = 50;
 	private int boxDefaultHeight = 330;
-	
+	 
 	public JBox(int boxDefaultCoordinateX, int boxDefaulCoordinateY) {
 		setIcon(new ImageIcon("src/caixa.png"));
 		setBounds(boxDefaultCoordinateX, boxDefaulCoordinateY, boxDefaultWidth, boxDefaultHeight);

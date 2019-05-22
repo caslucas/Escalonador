@@ -27,7 +27,7 @@ public class JCar extends JLabel {
 	private int velocity = 12;
 	
 	int boxDefaultCoordinateX = 0;
-	int boxDefaulCoordinateY = -35;
+	int boxDefaulCoordinateY = -35; 
 	
 	int qtdBoxes = 0;
 	
