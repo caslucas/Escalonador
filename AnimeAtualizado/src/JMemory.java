@@ -38,7 +38,8 @@ public class JMemory extends JFrame {
 	JButton firstFit = new JButton("First Fit");
 	JButton worstFit = new JButton("Worst Fit");
 	JButton bestFit = new JButton("Best Fit");
-	JButton voltar 		= new JButton("Voltar");
+	JButton nextFit	= new JButton("Next Fit");
+	JButton voltar  = new JButton("Voltar");
 	
 	List<JBoxMemory> boxes = null;
 	
@@ -60,7 +61,8 @@ public class JMemory extends JFrame {
 		Container teste = getContentPane();
 		teste.setLayout(null);
 		
-		voltar.setBounds	(360, 408, 110, 50);
+		voltar.setBounds	(10, 10, 110, 50);
+		nextFit.setBounds	(370, 430, 100, 20);
 		//voltar.setBounds	(310,  430, 100, 20);
 		bestFit.setBounds	(250, 430, 100, 20);
 		worstFit.setBounds	(130, 430, 100, 20);
@@ -73,6 +75,7 @@ public class JMemory extends JFrame {
 		add(firstFit);
 		add(worstFit);
 		add(bestFit);
+		add(nextFit);
 		add(voltar);
 		
 		firstFit.setVisible(true);
@@ -93,6 +96,12 @@ public class JMemory extends JFrame {
 		bestFit.setBackground(Color.white);
 		bestFit.setForeground(Color.white);
 		bestFit.setFocusable(false);
+		
+		nextFit.setOpaque(false);
+		nextFit.setBorder(new LineBorder(Color.white));
+		nextFit.setBackground(Color.white);
+		nextFit.setForeground(Color.white);
+		nextFit.setFocusable(false);
 		
 		voltar.setOpaque(false);
 		voltar.setBorder(null); 
