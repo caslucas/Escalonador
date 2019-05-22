@@ -106,7 +106,7 @@ public class JTunnel extends JFrame {
 		random.setForeground(Color.black);
 		
 		music.setOpaque(false);
-		music.setBorder(new LineBorder(Color.black));
+		music.setBorder(null); 
 		music.setBackground(Color.white);
 		music.setForeground(Color.black);
 		music.setFocusable(false);
@@ -114,7 +114,7 @@ public class JTunnel extends JFrame {
 		
 		
 		voltar.setOpaque(false);
-		voltar.setBorder(new LineBorder(Color.black));
+		voltar.setBorder(null); 
 		voltar.setBackground(Color.white);
 		voltar.setForeground(Color.black);
 		voltar.setFocusable(false);

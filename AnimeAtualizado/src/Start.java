@@ -4,6 +4,7 @@
  ****************************/
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class Start  extends JFrame  {
 	private static final ImageIcon ICON = new ImageIcon("src/capa.png");
 	JLabel back = new JLabel(new ImageIcon(getClass().getResource("anigif.gif")));
 	JButton animationCar = new JButton("Animação Escalonador");
-	JButton memoryGen = new JButton("Animação Gerencia de Memoria");
+	JButton memoryGen = new JButton("Animação  Memoria");
 	
 	
 	public Start(){
@@ -37,17 +38,19 @@ public class Start  extends JFrame  {
 		animationCar.setBounds		(300,300,300,50);
 		memoryGen.setBounds			(800,300,300,50);
 		back.setBounds				(0, 0, 1400, 450);
-		
-		
+			
 		memoryGen.setOpaque(false);
 		memoryGen.setBorder(new LineBorder(Color.black));
 		memoryGen.setBackground(Color.white);
 		memoryGen.setForeground(Color.black);
+		memoryGen.setFont(new Font("Dialog", Font.BOLD, 20));
 		
 		animationCar.setOpaque(false);
 		animationCar.setBorder(new LineBorder(Color.black));
 		animationCar.setBackground(Color.white);
 		animationCar.setForeground(Color.black);
+		animationCar.setFont(new Font("Dialog", Font.BOLD, 20));
+	
 		
 		add(memoryGen);
 		add(animationCar);
@@ -83,9 +86,9 @@ public class Start  extends JFrame  {
 		
 		List<JBoxMemory> boxess = new ArrayList<JBoxMemory>();
 		
-		boxess.add(new JBoxMemory("src/caixa.png",2, 5));
-		boxess.add(new JBoxMemory("src/caixa.png",2, 5));
-		boxess.add(new JBoxMemory("src/caixa.png",2, 5));
+		boxess.add(new JBoxMemory("src/caixa.png",3, 5));
+		boxess.add(new JBoxMemory("src/caixa.png",5, 5));
+		boxess.add(new JBoxMemory("src/caixa.png",6, 5));
 		boxess.add(new JBoxMemory("src/caixa.png",2, 5));	
 		//boxes.add(new JBox("src/caixa.png",10, 5));	
 		

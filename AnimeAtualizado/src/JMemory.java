@@ -1,5 +1,6 @@
 
 
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.border.LineBorder;
 
 public class JMemory extends JFrame {
 
@@ -36,6 +38,7 @@ public class JMemory extends JFrame {
 	JButton firstFit = new JButton("First Fit");
 	JButton worstFit = new JButton("Worst Fit");
 	JButton bestFit = new JButton("Best Fit");
+	JButton voltar 		= new JButton("Voltar");
 	
 	List<JBoxMemory> boxes = null;
 	
@@ -57,6 +60,8 @@ public class JMemory extends JFrame {
 		Container teste = getContentPane();
 		teste.setLayout(null);
 		
+		voltar.setBounds	(360, 408, 110, 50);
+		//voltar.setBounds	(310,  430, 100, 20);
 		bestFit.setBounds	(250, 430, 100, 20);
 		worstFit.setBounds	(130, 430, 100, 20);
 		firstFit.setBounds	(10,  430, 100, 20);
@@ -68,8 +73,33 @@ public class JMemory extends JFrame {
 		add(firstFit);
 		add(worstFit);
 		add(bestFit);
+		add(voltar);
 		
 		firstFit.setVisible(true);
+		firstFit.setOpaque(false);
+		firstFit.setBorder(new LineBorder(Color.white));
+		firstFit.setBackground(Color.white);
+		firstFit.setForeground(Color.white);
+		firstFit.setFocusable(false);
+		
+		worstFit.setOpaque(false);
+		worstFit.setBorder(new LineBorder(Color.white));
+		worstFit.setBackground(Color.white);
+		worstFit.setForeground(Color.white);
+		worstFit.setFocusable(false);
+		
+		bestFit.setOpaque(false);
+		bestFit.setBorder(new LineBorder(Color.white));
+		bestFit.setBackground(Color.white);
+		bestFit.setForeground(Color.white);
+		bestFit.setFocusable(false);
+		
+		voltar.setOpaque(false);
+		voltar.setBorder(null); 
+		voltar.setBackground(Color.white);
+		voltar.setForeground(Color.white);
+		voltar.setFocusable(false);
+		voltar.setIcon(new ImageIcon("src/voltar2.png"));
 
 		setSize(500, 500);
 		setVisible(true);
@@ -86,6 +116,15 @@ public class JMemory extends JFrame {
 		add(memory);
 		add(memory2);
 		add(back);
+		
+		
+		
+		voltar.addActionListener( new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new Start();
+				dispose();
+			}
+		});
 	
 		
 		/*########################### Tudo certo  ###################*/
