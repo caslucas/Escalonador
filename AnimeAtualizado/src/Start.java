@@ -2,6 +2,7 @@
  * @author : Lucas Lima
  * Email: lulima559@gmail.com
  ****************************/
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.border.LineBorder;
 
 
 
@@ -22,16 +24,36 @@ public class Start  extends JFrame  {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	JLabel backMain = new JLabel(new ImageIcon(getClass().getResource("src/giphy.gif")));
-	JButton chama = new JButton("Chama");
+	private static final ImageIcon ICON = new ImageIcon("src/capa.png");
+	JLabel back = new JLabel(new ImageIcon(getClass().getResource("anigif.gif")));
+	JButton animationCar = new JButton("Animação Escalonador");
+	JButton memoryGen = new JButton("Animação Gerencia de Memoria");
+	
+	
 	public Start(){
 		Container main = getContentPane();
 		main.setLayout(null);
 		
-		chama.setBounds(10,10,100,20);
-		add(chama);
-		add(backMain);
-		setSize(700, 700);
+		animationCar.setBounds		(300,300,300,50);
+		memoryGen.setBounds			(800,300,300,50);
+		back.setBounds				(0, 0, 1400, 450);
+		
+		
+		memoryGen.setOpaque(false);
+		memoryGen.setBorder(new LineBorder(Color.black));
+		memoryGen.setBackground(Color.white);
+		memoryGen.setForeground(Color.black);
+		
+		animationCar.setOpaque(false);
+		animationCar.setBorder(new LineBorder(Color.black));
+		animationCar.setBackground(Color.white);
+		animationCar.setForeground(Color.black);
+		
+		add(memoryGen);
+		add(animationCar);
+		add(back);
+		
+		setSize(1400, 450);
 		setLocationRelativeTo(null);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -48,17 +70,48 @@ public class Start  extends JFrame  {
 		cars.add(new JCar("src/sava.png", 4, 8));
 		cars.add(new JCar("src/sava.png", 5, 8));
 		int quantum = 2;
-
 		
-		chama.addActionListener( new ActionListener() {
+		
+		animationCar.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new JTunnel(cars, quantum);
 				dispose();
 				
 			}
 		});	
-
-}
+		
+		
+		List<JBoxMemory> boxess = new ArrayList<JBoxMemory>();
+		
+		boxess.add(new JBoxMemory("src/caixa.png",2, 5));
+		boxess.add(new JBoxMemory("src/caixa.png",2, 5));
+		boxess.add(new JBoxMemory("src/caixa.png",2, 5));
+		boxess.add(new JBoxMemory("src/caixa.png",2, 5));	
+		//boxes.add(new JBox("src/caixa.png",10, 5));	
+		
+		int tam = 8;
+	
+		//new FisrtFit(boxes, tam);	
+		
+	
+		
+		memoryGen.addActionListener( new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new JMemory(boxess, tam);
+				dispose();
+				
+			}
+		});	
+		
+		setIconImage(getIcon().getImage());
+	}
+	
+	
+	
+	public static ImageIcon getIcon() {
+		return ICON;
+	}
+	
 	public static void main(String[] args) {
 		new Start();
 	}

@@ -27,6 +27,7 @@ public class JTunnel extends JFrame {
 	JButton priority	= new JButton("Priority");
 	JButton random		= new JButton("Random");
 	JButton music 		= new JButton("	NoMusic");
+	JButton voltar 		= new JButton("Voltar");
 	JLabel back 		= new JLabel(new ImageIcon("src/backkk2.png"));
 	JLabel camada 		= new JLabel(new ImageIcon("src/camada.png"));
 	JLabel camada2 		= new JLabel(new ImageIcon("src/camada2.png"));
@@ -74,6 +75,7 @@ public class JTunnel extends JFrame {
 		priority.setBounds 	(340, 35, 100, 20);
 		random.setBounds 	(450, 35, 100, 20);
 		music.setBounds		(1230, 20, 110, 50);
+		voltar.setBounds	(1230, 350, 110, 50);
 		back.setBounds		(0, 0, 1400, 450);
 		camada.setBounds	(300, 35, 900, 312);
 		camada2.setBounds	(50, 35, 900, 312);
@@ -110,12 +112,21 @@ public class JTunnel extends JFrame {
 		music.setFocusable(false);
 		music.setIcon(new ImageIcon("src/download.png"));
 		
+		
+		voltar.setOpaque(false);
+		voltar.setBorder(new LineBorder(Color.black));
+		voltar.setBackground(Color.white);
+		voltar.setForeground(Color.black);
+		voltar.setFocusable(false);
+		voltar.setIcon(new ImageIcon("src/voltar.png"));
+		
 		add(FCFS);
 		add(SJF);
 		add(RR);
 		add(priority);
 		add(random);
 		add(music);
+		add(voltar);
 		add(camada);
 		
 		Collections.reverse(cars);
@@ -224,6 +235,15 @@ public class JTunnel extends JFrame {
 		
 		add(camada2);
 		add(back);
+		
+		voltar.addActionListener( new ActionListener() {   
+			public void actionPerformed(ActionEvent e) {
+				mp3player.stop();
+				new Start();
+				dispose();
+				
+			}
+		});
 			
 		SJF.addActionListener( new ActionListener() {   
 			public void actionPerformed(ActionEvent e) {
