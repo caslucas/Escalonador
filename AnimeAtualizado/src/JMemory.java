@@ -32,14 +32,15 @@ public class JMemory extends JFrame {
             new ConcurrentLinkedQueue<Thread>();
 	
 	//JLabel processo = new JLabel(new ImageIcon(getClass().getResource("caixa.png")));
-	JLabel memory = new JLabel(new ImageIcon(getClass().getResource("memory.png")));
-	JLabel memory2 = new JLabel(new ImageIcon(getClass().getResource("memory.png")));
-	JLabel back = new JLabel(new ImageIcon(getClass().getResource("back.gif")));
+	JLabel memory 	 = new JLabel(new ImageIcon(getClass().getResource("memory.png")));
+	JLabel memory2 	 = new JLabel(new ImageIcon(getClass().getResource("memory.png")));
+	JLabel back 	 = new JLabel(new ImageIcon(getClass().getResource("gif.gif")));
+	JLabel ram 		 = new JLabel(new ImageIcon(getClass().getResource("ram.png")));
 	JButton firstFit = new JButton("First Fit");
 	JButton worstFit = new JButton("Worst Fit");
-	JButton bestFit = new JButton("Best Fit");
-	JButton nextFit	= new JButton("Next Fit");
-	JButton voltar  = new JButton("Voltar");
+	JButton bestFit  = new JButton("Best Fit");
+	JButton nextFit	 = new JButton("Next Fit");
+	JButton voltar   = new JButton("Voltar");
 	
 	List<JBoxMemory> boxes = null;
 	
@@ -67,16 +68,19 @@ public class JMemory extends JFrame {
 		bestFit.setBounds	(250, 430, 100, 20);
 		worstFit.setBounds	(130, 430, 100, 20);
 		firstFit.setBounds	(10,  430, 100, 20);
-		memory.setBounds	(240, 10, 270, 200);
-		memory2.setBounds	(240, 220, 270, 200);
+	//	memory.setBounds	(240, 10, 270, 200);
+	//	memory2.setBounds	(240, 220, 270, 200);
+		ram.setBounds		(240, 10, 300, 400);
 		back.setBounds		(0, 0, 500, 500);
-		add(memory);
-		add(memory2);
+		//add(memory);
+	//	add(memory2);
+		
 		add(firstFit);
 		add(worstFit);
 		add(bestFit);
 		add(nextFit);
 		add(voltar);
+		
 		
 		firstFit.setVisible(true);
 		firstFit.setOpaque(false);
@@ -122,8 +126,7 @@ public class JMemory extends JFrame {
 			boxCoordinateY += 60;
 			add(c);
 		});
-		add(memory);
-		add(memory2);
+		add(ram);
 		add(back);
 		
 		
