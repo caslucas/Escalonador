@@ -27,6 +27,7 @@ public class Start  extends JFrame  {
 	private static final long serialVersionUID = 1L;
 	private static final ImageIcon ICON = new ImageIcon("src/capa.png");
 	JLabel back = new JLabel(new ImageIcon(getClass().getResource("anigif.gif")));
+	JLabel label = new JLabel(new ImageIcon(getClass().getResource("tog.png")));
 	JButton animationCar = new JButton("Animação Escalonador");
 	JButton memoryGen = new JButton("Animação  Memoria");
 	
@@ -37,6 +38,7 @@ public class Start  extends JFrame  {
 		
 		animationCar.setBounds		(300,300,300,50);
 		memoryGen.setBounds			(800,300,300,50);
+		label.setBounds				(200, 0, 957, 110);
 		back.setBounds				(0, 0, 1400, 450);
 			
 		memoryGen.setOpaque(false);
@@ -54,6 +56,7 @@ public class Start  extends JFrame  {
 		
 		add(memoryGen);
 		add(animationCar);
+		add(label);
 		add(back);
 		
 		setSize(1400, 450);
@@ -86,8 +89,8 @@ public class Start  extends JFrame  {
 		
 		List<JBoxMemory> boxess = new ArrayList<JBoxMemory>();
 		
-		boxess.add(new JBoxMemory("src/olha.png",3, 5));
-		boxess.add(new JBoxMemory("src/olha.png",5, 5));
+		boxess.add(new JBoxMemory("src/caixa.png",3, 5));
+		boxess.add(new JBoxMemory("src/caixa.png",5, 5));
 		//boxess.add(new JBoxMemory("src/caixa.png",6, 5));
 		//boxess.add(new JBoxMemory("src/caixa.png",2, 5));	
 		//boxes.add(new JBox("src/caixa.png",10, 5));	
@@ -96,11 +99,18 @@ public class Start  extends JFrame  {
 	
 		//new FisrtFit(boxes, tam);	
 		
-	
+		
+		List<Particao> partition = new ArrayList<Particao>();
+		
+		partition.add(new Particao(0, 280, 70, 340, 56));
+		//partition.add(new Particao(0, 280, 70, 340, 56));
+		//partition.add(new Particao(0, 280, 70, 340, 56));
+		//partition.add(new Particao(0, 280, 70, 340, 56));
+		//partition.add(new Particao(0, 280, 70, 340, 56));
 		
 		memoryGen.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new JMemory(boxess, tam);
+				new JMemory(boxess, tam, partition);
 				dispose();
 				
 			}

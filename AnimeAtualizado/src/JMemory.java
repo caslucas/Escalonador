@@ -35,7 +35,7 @@ public class JMemory extends JFrame {
 	JLabel memory 	 = new JLabel(new ImageIcon(getClass().getResource("memory.png")));
 	JLabel memory2 	 = new JLabel(new ImageIcon(getClass().getResource("memory.png")));
 	JLabel back 	 = new JLabel(new ImageIcon(getClass().getResource("gif.gif")));
-	JLabel ram 		 = new JLabel(new ImageIcon(getClass().getResource("memoryRam1.png")));
+	JLabel ram 		 = new JLabel(new ImageIcon(getClass().getResource("arquivoMorto.png")));
 	JButton firstFit = new JButton("First Fit");
 	JButton worstFit = new JButton("Worst Fit");
 	JButton bestFit  = new JButton("Best Fit");
@@ -43,6 +43,7 @@ public class JMemory extends JFrame {
 	JButton voltar   = new JButton("Voltar");
 	
 	List<JBoxMemory> boxes = null;
+	List<Particao> particoes = null;
 	
 	int boxCoordinateY = 80;
 	int boxCoordinateX = 3;
@@ -51,9 +52,10 @@ public class JMemory extends JFrame {
 	
 	private static int tamMemA = 8, tamMemB = 8;
 	
-	public JMemory(List<JBoxMemory> boxes, int  tamProcesso) {
+	public JMemory(List<JBoxMemory> boxes, int  tamProcesso, List<Particao> particoes) {
 		this.boxes = boxes;
 		this.tamProcesso = tamProcesso;
+		this.particoes = particoes;
 		init();
 	}
 	
@@ -129,8 +131,7 @@ public class JMemory extends JFrame {
 		add(ram);
 		add(back);
 		
-		
-		
+
 		voltar.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new Start();
@@ -138,19 +139,28 @@ public class JMemory extends JFrame {
 			}
 		});
 	
-		
 		/*########################### Tudo certo  ###################*/
 		boxes.forEach((c) -> {
 			tQueueFirstFit.add(new Thread() {
 				public void run() {
-						c.run(300, 56);
+						c.run(255, 3);
 						try {
 							Thread.sleep(1000);
 						} catch (InterruptedException e) {
 							e.printStackTrace();
 						}
+						
+						particoes.forEach((p)->{
+							c.run(255, p.getPosCheckY());
+							
+							if(c.getTamProcess()<=p.getTamanho()) {
+								c.run(355, p.getPosCheckY());
+							}
+							
+						});
+						
 
-						if(c.getTamProcess() == 3) {
+						/*if(c.getTamProcess() == 3) {
 							c.runAsThread(370, 56).start();
 							//tamMemA = tamMemA-c.getTamProcess();
 							
@@ -158,17 +168,10 @@ public class JMemory extends JFrame {
 							
 							c.ifMemoryBBiggerMemoryA();
 							
-						}
-						
-						/*	if(c.getTamProcess() == 5) { 
-								c.ifTamProcessBiggerTamMemory();
+						}*/
 							
 							
-							
-						}*//*else {
-							
-							JOptionPane.showMessageDialog(null, "Não há espaço na memoria" + "\n" +"ou tamanho do processo" + "\n" + "maior que o tamanho da memoria");
-						}	*/						
+									
 					}
 				});
 			});
@@ -282,5 +285,7 @@ public class JMemory extends JFrame {
 		});
 		
 		/*######################## fazer next #########################*/
-	}	
+
+	}
+
 }
