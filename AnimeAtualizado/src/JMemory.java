@@ -35,7 +35,7 @@ public class JMemory extends JFrame {
 	JLabel memory 	 = new JLabel(new ImageIcon(getClass().getResource("memory.png")));
 	JLabel memory2 	 = new JLabel(new ImageIcon(getClass().getResource("memory.png")));
 	JLabel back 	 = new JLabel(new ImageIcon(getClass().getResource("gif.gif")));
-	JLabel ram 		 = new JLabel(new ImageIcon(getClass().getResource("ram.png")));
+	JLabel ram 		 = new JLabel(new ImageIcon(getClass().getResource("memoryRam1.png")));
 	JButton firstFit = new JButton("First Fit");
 	JButton worstFit = new JButton("Worst Fit");
 	JButton bestFit  = new JButton("Best Fit");
@@ -143,24 +143,32 @@ public class JMemory extends JFrame {
 		boxes.forEach((c) -> {
 			tQueueFirstFit.add(new Thread() {
 				public void run() {
-						c.run(240, 70);
+						c.run(300, 56);
 						try {
 							Thread.sleep(1000);
 						} catch (InterruptedException e) {
 							e.printStackTrace();
 						}
 
-						if(c.getTamProcess()<=tamMemA) {
-							c.runAsThread(340, 70).start();
-							tamMemA = tamMemA-c.getTamProcess();
+						if(c.getTamProcess() == 3) {
+							c.runAsThread(370, 56).start();
+							//tamMemA = tamMemA-c.getTamProcess();
 							
-						}else if(c.getTamProcess()<=tamMemB) {
-							c.ifTamProcessBiggerTamMemory();
-							tamMemB = tamMemB -c.getTamProcess();
-						}else {
+						}else{
+							
+							c.ifMemoryBBiggerMemoryA();
+							
+						}
+						
+						/*	if(c.getTamProcess() == 5) { 
+								c.ifTamProcessBiggerTamMemory();
+							
+							
+							
+						}*//*else {
 							
 							JOptionPane.showMessageDialog(null, "Não há espaço na memoria" + "\n" +"ou tamanho do processo" + "\n" + "maior que o tamanho da memoria");
-						}							
+						}	*/						
 					}
 				});
 			});

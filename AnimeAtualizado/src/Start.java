@@ -86,10 +86,10 @@ public class Start  extends JFrame  {
 		
 		List<JBoxMemory> boxess = new ArrayList<JBoxMemory>();
 		
-		boxess.add(new JBoxMemory("src/caixa.png",3, 5));
-		boxess.add(new JBoxMemory("src/caixa.png",5, 5));
-		boxess.add(new JBoxMemory("src/caixa.png",6, 5));
-		boxess.add(new JBoxMemory("src/caixa.png",2, 5));	
+		boxess.add(new JBoxMemory("src/olha.png",3, 5));
+		boxess.add(new JBoxMemory("src/olha.png",5, 5));
+		//boxess.add(new JBoxMemory("src/caixa.png",6, 5));
+		//boxess.add(new JBoxMemory("src/caixa.png",2, 5));	
 		//boxes.add(new JBox("src/caixa.png",10, 5));	
 		
 		int tam = 8;

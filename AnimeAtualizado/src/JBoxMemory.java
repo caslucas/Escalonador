@@ -20,11 +20,11 @@ public class JBoxMemory extends JLabel {
 		this.tamProcess = tamProcess;
 		this.velocity = velocity;
 		setIcon(new ImageIcon(iconPath));
-		setBounds(3, 70, 50, 30);	
+		setBounds(3, 50, 110, 50);	
 	}
 	
 	public void setCoordinateXY(int boxCoordinateX, int boxCoordinateY) {
-		setBounds(boxCoordinateX, boxCoordinateY, 50, 30);
+		setBounds(boxCoordinateX, boxCoordinateY, 110, 50);
 	}
 	
 	public void run(int limit, int posY) {
@@ -77,9 +77,9 @@ public class JBoxMemory extends JLabel {
 		hasAnyThreadRunning = true;
 		new Thread() {
 			public void run() {
-				JBoxMemory.this.run(240, 70);
-				moveY(280);
-				moveX(340);	
+				JBoxMemory.this.run(300, 56);
+				moveY(217);
+				moveX(370);	
 				hasAnyThreadRunning = false;
 				}
 			}.start();
@@ -89,12 +89,12 @@ public class JBoxMemory extends JLabel {
 		hasAnyThreadRunning = true;
 		new Thread() {
 			public void run() {
-				JBoxMemory.this.run(240, 70);
-				moveY(280);
-				moveX(340);	
+				JBoxMemory.this.run(300, 56);
+				moveY(180);
+				//moveX(340);	
 				hasAnyThreadRunning = false;
-			}
-		}.start();
+				}
+			}.start();
 		}
 	}
 
