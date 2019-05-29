@@ -144,15 +144,16 @@ public class JMemory extends JFrame {
 			tQueueFirstFit.add(new Thread() {
 				public void run() {
 						c.run(255, 3);
-						try {
-							Thread.sleep(1000);
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
+		
 						
 						for (Particao p : particoes ) {
 							
 							c.run(255, p.getPosCheckY());
+							try {
+								Thread.sleep(800);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
 							
 							if(c.getTamProcess()<=p.getTamanho()) {
 
