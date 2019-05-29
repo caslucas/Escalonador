@@ -63,6 +63,7 @@ public class JBoxMemory extends JLabel {
 		setBounds(getX(), limit, getWidth(), getHeight());
 	}
 	
+	
 	public Thread runAsThread(int limit, int posY) {
 		return new Thread() {
 			public void run() {
