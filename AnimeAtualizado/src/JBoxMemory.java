@@ -20,6 +20,7 @@ public class JBoxMemory extends JLabel {
 		this.tamProcess = tamProcess;
 		this.velocity = velocity;
 		setIcon(new ImageIcon(iconPath));
+		setText(String.valueOf(tamProcess));
 		setBounds(3, 50, 110, 50);	
 	}
 	
