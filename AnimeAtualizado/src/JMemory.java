@@ -154,12 +154,8 @@ public class JMemory extends JFrame {
 							c.run(255, p.getPosCheckY());
 							
 							if(c.getTamProcess()<=p.getTamanho()) {
-								c.run(p.getPosParadaX(),c.getY());	
-								
-								
-								
+								c.run(p.getPosParadaX(),c.getY());									
 							}
-							
 						});
 						
 				
