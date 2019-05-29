@@ -102,9 +102,9 @@ public class Start  extends JFrame  {
 		
 		List<Particao> partition = new ArrayList<Particao>();
 		
-		partition.add(new Particao(0, 280, 70, 340, 56));
-		//partition.add(new Particao(0, 280, 70, 340, 56));
-		//partition.add(new Particao(0, 280, 70, 340, 56));
+		partition.add(new Particao(3, 255, 58, 340, 56));
+		partition.add(new Particao(0, 280, 118, 340, 56));
+		partition.add(new Particao(8, 280, 177, 340, 56));
 		//partition.add(new Particao(0, 280, 70, 340, 56));
 		//partition.add(new Particao(0, 280, 70, 340, 56));
 		

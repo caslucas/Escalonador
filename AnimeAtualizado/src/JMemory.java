@@ -150,14 +150,16 @@ public class JMemory extends JFrame {
 							e.printStackTrace();
 						}
 						
-						particoes.forEach((p)->{
+						for (Particao p : particoes ) {
+							
 							c.run(255, p.getPosCheckY());
 							
 							if(c.getTamProcess()<=p.getTamanho()) {
-								c.run(355, p.getPosCheckY());
+								c.run(p.getPosParadaX(), c.getY());
+								break;
 							}
-							
-						});
+						}	
+						
 						
 
 						/*if(c.getTamProcess() == 3) {
