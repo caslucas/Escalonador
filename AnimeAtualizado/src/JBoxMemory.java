@@ -1,12 +1,11 @@
 
 
+import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
-import com.sun.prism.paint.Color;
 
 public class JBoxMemory extends JLabel {
 	
@@ -28,7 +27,8 @@ public class JBoxMemory extends JLabel {
 		this.velocity = velocity;
 		setIcon(new ImageIcon(iconPath));
 		setText(String.valueOf(tamProcess));
-		
+		setForeground(Color.BLACK);
+		setHorizontalTextPosition(CENTER);
 		setBounds(3, 50, 110, 50);	
 	}
 	

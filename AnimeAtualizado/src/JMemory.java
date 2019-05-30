@@ -4,7 +4,8 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -156,27 +157,11 @@ public class JMemory extends JFrame {
 							}
 							
 							if(c.getTamProcess()<=p.getTamanho()) {
-
+								p.tamanho =  p.getTamanho() -c.getTamProcess(); 
 								c.run(p.getPosParadaX(), c.getY());
 								break;
 							}
-						}	
-						
-
-						
-				
-						/*if(c.getTamProcess() == 3) {
-							c.runAsThread(370, 56).start();
-							//tamMemA = tamMemA-c.getTamProcess();
-							
-						}else{
-							
-							c.ifMemoryBBiggerMemoryA();
-							
-						}*/
-							
-							
-									
+						}								
 					}
 				});
 			});
@@ -204,22 +189,28 @@ public class JMemory extends JFrame {
 		boxes.forEach((c) -> {
 			tQueueWorstFit.add(new Thread() {
 				public void run() {
-						c.run(240, 70);
+					c.run(255, 3);
+					
+				//	List<Particao> particoes = new ArrayList<Particao>();
+					Particao max = null;
+					//articao u1, Particao u2) -> Integer.compare(u1.getTamanho(), u2.getTamanho())
+					max = particoes.stream().max(Comparator.comparing(Particao::getTamanho)).get();
+			
+					for (Particao p : particoes ) {
+						
+						c.run(255, p.getPosCheckY());
 						try {
-							Thread.sleep(1000);
+							Thread.sleep(800);
 						} catch (InterruptedException e) {
 							e.printStackTrace();
 						}
 						
-						if(c.getTamProcess()<tamMemA) {
-							c.runAsThread(340, 70).start();
-							tamMemA = tamMemA - c.getTamProcess();
-						}	
-						 if(tamMemA<tamMemB) {
-								c.ifTamProcessBiggerTamMemory();
+						if(p.equals(max)) {
+							p.tamanho =  p.getTamanho() -c.getTamProcess(); 
+							c.run(p.getPosParadaX(), c.getY());
+							break;
 							}
-						
-						
+						}	
 					}
 				});
 			});

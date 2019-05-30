@@ -8,6 +8,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.swing.ImageIcon;
@@ -110,6 +111,11 @@ public class Start  extends JFrame  {
 
 		//partition.add(new Particao(0, 280, 70, 340, 56));
 		//partition.add(new Particao(0, 280, 70, 340, 56));
+		
+		System.out.println(partition.stream().max((Particao u1, Particao u2) -> 
+			Integer.compare(u1.getTamanho(), u2.getTamanho())).get().getTamanho());
+		
+		
 		
 		memoryGen.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
