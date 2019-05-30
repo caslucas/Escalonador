@@ -1,5 +1,12 @@
+
+
+import java.awt.Font;
+
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import com.sun.prism.paint.Color;
 
 public class JBoxMemory extends JLabel {
 	
@@ -11,7 +18,7 @@ public class JBoxMemory extends JLabel {
 	private boolean hasAnyThreadRunning = false;
 	int tamProcess = 0;
 	int velocity = 12;
-	
+	Font font1 = new Font("SansSerif", Font.BOLD, 20);
 	public int getTamProcess() {
 		return tamProcess;
 	}
@@ -21,6 +28,7 @@ public class JBoxMemory extends JLabel {
 		this.velocity = velocity;
 		setIcon(new ImageIcon(iconPath));
 		setText(String.valueOf(tamProcess));
+		
 		setBounds(3, 50, 110, 50);	
 	}
 	

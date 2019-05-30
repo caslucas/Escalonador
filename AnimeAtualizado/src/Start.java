@@ -91,9 +91,9 @@ public class Start  extends JFrame  {
 		
 		boxess.add(new JBoxMemory("src/caixa.png",1, 5));
 		boxess.add(new JBoxMemory("src/caixa.png",2, 5));
-		boxess.add(new JBoxMemory("src/caixa.png",6, 5));
-		//boxess.add(new JBoxMemory("src/caixa.png",2, 5));	
-		//boxes.add(new JBox("src/caixa.png",10, 5));	
+		boxess.add(new JBoxMemory("src/caixa.png",5, 5));
+		boxess.add(new JBoxMemory("src/caixa.png",3, 5));	
+		boxess.add(new JBoxMemory("src/caixa.png",2, 5));	
 		
 		int tam = 8;
 	
@@ -102,13 +102,11 @@ public class Start  extends JFrame  {
 		
 		List<Particao> partition = new ArrayList<Particao>();
 		
-		partition.add(new Particao(3, 255, 58, 340, 56));
+		partition.add(new Particao(3, 255, 60, 340, 56));
 		partition.add(new Particao(0, 280, 118, 340, 56));
 		partition.add(new Particao(8, 280, 177, 340, 56)); 
-
-
-		//partition.add(new Particao(0, 320, 60, 360, 66));
-		//partition.add(new Particao(0, 280, 70, 340, 56));
+		partition.add(new Particao(2, 320, 220, 360, 66));
+		partition.add(new Particao(0, 280, 70, 340, 56));
 
 		//partition.add(new Particao(0, 280, 70, 340, 56));
 		//partition.add(new Particao(0, 280, 70, 340, 56));

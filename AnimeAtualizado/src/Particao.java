@@ -1,13 +1,12 @@
-import java.util.List;
 
 
 public class Particao {
 	
-	int tamanho = 1;
-	int posCheckX = 1;
+	int tamanho = 0;
+	int posCheckX = 0;
 	int posCheckY = 0;
-	int posParadaX = 1;
-	int posParadaY = 1;
+	int posParadaX = 0;
+	int posParadaY = 0;
 
 
 	
