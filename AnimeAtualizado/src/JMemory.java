@@ -36,7 +36,7 @@ public class JMemory extends JFrame {
 	JLabel memory 	 = new JLabel(new ImageIcon(getClass().getResource("memory.png")));
 	JLabel memory2 	 = new JLabel(new ImageIcon(getClass().getResource("memory.png")));
 	JLabel back 	 = new JLabel(new ImageIcon(getClass().getResource("gif.gif")));
-	JLabel ram 		 = new JLabel(new ImageIcon(getClass().getResource("arquivoMorto3.png")));
+	JLabel ram 		 = new JLabel(new ImageIcon(getClass().getResource("arquivoMorto5.png")));
 	JButton firstFit = new JButton("First Fit");
 	JButton worstFit = new JButton("Worst Fit");
 	JButton bestFit  = new JButton("Best Fit");
@@ -126,7 +126,7 @@ public class JMemory extends JFrame {
 			
 			c.setCoordinateXY(boxCoordinateX, boxCoordinateY);
 			boxCoordinateX += 0;
-			boxCoordinateY += 60;
+			boxCoordinateY += 50;
 			add(c);
 		});
 		add(ram);

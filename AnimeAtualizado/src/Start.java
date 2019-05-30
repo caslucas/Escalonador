@@ -92,8 +92,10 @@ public class Start  extends JFrame  {
 		
 		boxess.add(new JBoxMemory("src/caixa.png",1, 5));
 		boxess.add(new JBoxMemory("src/caixa.png",2, 5));
-		boxess.add(new JBoxMemory("src/caixa.png",5, 5));
-		boxess.add(new JBoxMemory("src/caixa.png",3, 5));	
+		boxess.add(new JBoxMemory("src/caixa.png",2, 5));
+		boxess.add(new JBoxMemory("src/caixa.png",4, 5));
+		boxess.add(new JBoxMemory("src/caixa.png",3, 5));
+		boxess.add(new JBoxMemory("src/caixa.png",1, 5));	
 		boxess.add(new JBoxMemory("src/caixa.png",2, 5));	
 		
 		int tam = 8;
@@ -103,17 +105,16 @@ public class Start  extends JFrame  {
 		
 		List<Particao> partition = new ArrayList<Particao>();
 		
-		partition.add(new Particao(3, 255, 60, 340, 56));
+		partition.add(new Particao(5, 255, 60, 340, 56));
 		partition.add(new Particao(0, 280, 118, 340, 56));
 		partition.add(new Particao(8, 280, 177, 340, 56)); 
-		partition.add(new Particao(2, 320, 220, 360, 66));
-		partition.add(new Particao(0, 280, 70, 340, 56));
+		partition.add(new Particao(0, 280, 220, 340, 56));
+		partition.add(new Particao(2, 280, 301, 300, 100));
 
-		//partition.add(new Particao(0, 280, 70, 340, 56));
-		//partition.add(new Particao(0, 280, 70, 340, 56));
+
 		
-		System.out.println(partition.stream().max((Particao u1, Particao u2) -> 
-			Integer.compare(u1.getTamanho(), u2.getTamanho())).get().getTamanho());
+		//System.out.println(partition.stream().max((Particao u1, Particao u2) -> 
+			//Integer.compare(u1.getTamanho(), u2.getTamanho())).get().getTamanho());
 		
 		
 		

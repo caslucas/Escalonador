@@ -29,6 +29,7 @@ public class JBoxMemory extends JLabel {
 		setText(String.valueOf(tamProcess));
 		setForeground(Color.BLACK);
 		setHorizontalTextPosition(CENTER);
+		setFont(new Font("SansSerif", Font.BOLD, 17));
 		setBounds(3, 50, 110, 50);	
 	}
 	
