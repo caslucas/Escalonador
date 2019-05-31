@@ -216,6 +216,7 @@ public class JMemory extends JFrame {
 						if(p.equals(max)) {
 							p.tamanho =  p.getTamanho() -c.getTamProcess(); 
 							c.run(p.getPosParadaX(), c.getY());
+							p.proxPosicao();
 							break;
 							}
 						}	
