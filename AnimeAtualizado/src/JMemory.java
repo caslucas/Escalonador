@@ -125,12 +125,17 @@ public class JMemory extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	
 		boxes.forEach((c) ->{
-			
 			c.setCoordinateXY(boxCoordinateX, boxCoordinateY);
 			boxCoordinateX += 0;
 			boxCoordinateY += 50;
 			add(c);
 		});
+		
+		particoes.forEach((p) ->{
+			
+			//add(p);
+		});
+		
 		add(ram);
 		add(back);
 		
@@ -161,6 +166,7 @@ public class JMemory extends JFrame {
 							if(c.getTamProcess()<=p.getTamanho()) {
 								p.tamanho =  p.getTamanho() -c.getTamProcess(); 
 								c.run(p.getPosParadaX(), c.getY());
+								p.proxPosicao();
 								break;
 							}
 						}								

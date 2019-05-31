@@ -51,6 +51,11 @@ public class Particao  {
 		return posParadaY;
 	}
 	
+	public void proxPosicao() {
+		
+		this.posParadaX -= 44;
+	}
+	
 	
 
 }

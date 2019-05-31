@@ -106,11 +106,11 @@ public class Start  extends JFrame  {
 		
 		List<Particao> partition = new ArrayList<Particao>();
 		
-		partition.add(new Particao(5, 255, 60, 340, 56));
-		partition.add(new Particao(0, 280, 118, 340, 56));
-		partition.add(new Particao(8, 280, 177, 340, 56)); 
-		partition.add(new Particao(0, 280, 220, 340, 56));
-		partition.add(new Particao(2, 280, 301, 300, 100));
+		partition.add(new Particao(5, 255, 60, 407, 56));
+		partition.add(new Particao(0, 280, 118, 407, 56));
+		partition.add(new Particao(8, 280, 177, 407, 56)); 
+		partition.add(new Particao(0, 280, 238, 407, 56));
+		partition.add(new Particao(2, 280, 302, 319, 56));
 
 
 		
