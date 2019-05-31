@@ -2,6 +2,7 @@
  * @author : Lucas Lima
  * Email: lulima559@gmail.com
  ****************************/
+import java.awt.Font;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,16 +32,28 @@ public class JCar extends JLabel {
 	
 	int qtdBoxes = 0;
 	
+	String nomeProcess;
 	
-	public JCar(String iconPath, int qtdBoxes, int velocity) {
+	
+	public String getNomeProcess() {
+		return nomeProcess;
+	}
+
+	public JCar(String iconPath, int qtdBoxes, int velocity, String nomeProcess) {
 		this.velocity = velocity;
 		this.qtdBoxes = qtdBoxes;
-		//setIcon(new ImageIcon("src/sava.png"));
 		setIcon(new ImageIcon(iconPath));
+		setText(nomeProcess);
+		setHorizontalTextPosition(CENTER);
+		//setVerticalTextPosition(10);
+		setFont(new Font("SansSerif", Font.BOLD, 19));
 		setBounds(3, 100, 200, 330);
 		insertBoxesByQty(qtdBoxes);
+		
 	}
 	
+
+
 	public boolean hasAnyThreadRunning() {
 		return hasAnyThreadRunning;
 	}

@@ -26,12 +26,14 @@ public class JTunnel extends JFrame {
 	JButton RR  		= new JButton("RR");
 	JButton priority	= new JButton("Priority");
 	JButton random		= new JButton("Random");
-	JButton music 		= new JButton("	NoMusic");
+	JButton music 		= new JButton("");
 	JButton voltar 		= new JButton("Voltar");
 	JLabel back 		= new JLabel(new ImageIcon("src/backkk2.png"));
 	JLabel camada 		= new JLabel(new ImageIcon("src/camada.png"));
 	JLabel camada2 		= new JLabel(new ImageIcon("src/camada2.png"));
-	 
+	JLabel nomeCamada 		= new JLabel(new ImageIcon("src/NomeCamada.png"));
+	JLabel aviao 		= new JLabel(new ImageIcon("src/aviao.gif"));
+	JLabel fogo		= new JLabel(new ImageIcon("src/fogo.gif"));
     private static final ImageIcon ICON = new ImageIcon("src/capa.png");
     
 	List<JCar> cars = null;
@@ -69,16 +71,19 @@ public class JTunnel extends JFrame {
 		setVisible				(true);
 		setLayout				(null);
 			
+		fogo.setBounds	(750, 3, 100, 312);
+		aviao.setBounds 	(750, 5, 600, 100);
 		FCFS.setBounds 		(10, 35, 100, 20);
 		SJF.setBounds 		(120, 35, 100, 20);
 		RR.setBounds 		(230, 35, 100, 20);
 		priority.setBounds 	(340, 35, 100, 20);
 		random.setBounds 	(450, 35, 100, 20);
-		music.setBounds		(1230, 20, 110, 50);
+		music.setBounds		(750, 10 , 600, 85);
 		voltar.setBounds	(1230, 350, 110, 50);
 		back.setBounds		(0, 0, 1400, 450);
 		camada.setBounds	(300, 35, 900, 312);
 		camada2.setBounds	(50, 35, 900, 312);
+		nomeCamada.setBounds	(300, 0, 900, 100);
 		
 		SJF.setOpaque(false);
 		SJF.setBorder(new LineBorder(Color.black));
@@ -110,7 +115,7 @@ public class JTunnel extends JFrame {
 		music.setBackground(Color.white);
 		music.setForeground(Color.black);
 		music.setFocusable(false);
-		music.setIcon(new ImageIcon("src/download.png"));
+		music.setIcon(new ImageIcon("src/aviao.gif"));
 		
 		
 		voltar.setOpaque(false);
@@ -120,6 +125,7 @@ public class JTunnel extends JFrame {
 		voltar.setFocusable(false);
 		voltar.setIcon(new ImageIcon("src/voltar.png"));
 		
+		//add(aviao);
 		add(FCFS);
 		add(SJF);
 		add(RR);
@@ -128,6 +134,7 @@ public class JTunnel extends JFrame {
 		add(music);
 		add(voltar);
 		add(camada);
+		add(fogo);
 		
 		Collections.reverse(cars);
 
@@ -232,7 +239,7 @@ public class JTunnel extends JFrame {
 				}
 			});
 		});
-		
+		add(nomeCamada);
 		add(camada2);
 		add(back);
 		

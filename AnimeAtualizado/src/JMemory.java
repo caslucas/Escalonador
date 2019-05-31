@@ -2,6 +2,7 @@
 
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -64,6 +65,7 @@ public class JMemory extends JFrame {
 
 		Container teste = getContentPane();
 		teste.setLayout(null);
+		
 		
 		voltar.setBounds	(10, 10, 110, 50);
 		nextFit.setBounds	(370, 430, 100, 20);

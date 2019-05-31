@@ -1,6 +1,9 @@
+import java.awt.Color;
+import java.awt.Font;
 
+import javax.swing.JLabel;
 
-public class Particao {
+public class Particao  {
 	
 	int tamanho = 0;
 	int posCheckX = 0;

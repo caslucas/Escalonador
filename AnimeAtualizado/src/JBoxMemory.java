@@ -17,7 +17,7 @@ public class JBoxMemory extends JLabel {
 	private boolean hasAnyThreadRunning = false;
 	int tamProcess = 0;
 	int velocity = 12;
-	Font font1 = new Font("SansSerif", Font.BOLD, 20);
+
 	public int getTamProcess() {
 		return tamProcess;
 	}

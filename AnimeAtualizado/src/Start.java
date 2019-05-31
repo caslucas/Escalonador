@@ -67,15 +67,16 @@ public class Start  extends JFrame  {
 		
 		List<JCar> cars = new ArrayList<JCar>();
 		
+		
 		/*int teste = 3; 
 		
 		for (int i = 0; i < teste; i++) {
 			cars.add(new JCar("src/sava.png", Integer.parseInt(JOptionPane.showInputDialog("Digite o tamanho do processo nº"+ (i+1) )), 8));
 		}
 		int quantum = Integer.parseInt(JOptionPane.showInputDialog("Digite o quantum de tempo"));
-*/		cars.add(new JCar("src/sava.png", 3, 8));
-		cars.add(new JCar("src/sava.png", 4, 8));
-		cars.add(new JCar("src/sava.png", 5, 8));
+*/		cars.add(new JCar("src/sava.png", 4, 8, "Processo 1"));
+		cars.add(new JCar("src/sava.png", 3, 8, "Processo 2"));
+		cars.add(new JCar("src/sava.png", 5, 8, "Processo 3"));
 		int quantum = 2;
 		
 		
