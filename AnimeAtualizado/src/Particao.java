@@ -1,7 +1,3 @@
-import java.awt.Color;
-import java.awt.Font;
-
-import javax.swing.JLabel;
 
 public class Particao  {
 	
@@ -10,9 +6,20 @@ public class Particao  {
 	int posCheckY = 0;
 	int posParadaX = 0;
 	int posParadaY = 0;
+	boolean lastInserted = false;
 
 
 	
+	public boolean isLastInserted() {
+		return lastInserted;
+	}
+
+
+	public void setLastInserted(boolean lastInserted) {
+		this.lastInserted = lastInserted;
+	}
+
+
 	public Particao(int tamanho, int posCheckX, int posCheckY, int posParadaX, int posParadaY) {
 		super();
 		this.tamanho = tamanho;
@@ -54,6 +61,14 @@ public class Particao  {
 	public void proxPosicao() {
 		
 		this.posParadaX -= 44;
+	}
+	
+	public void proxParticao() {
+		
+		if( getTamanho() >0) {
+			
+		}
+		
 	}
 	
 	

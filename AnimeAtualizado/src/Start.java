@@ -114,10 +114,10 @@ public class Start  extends JFrame  {
 
 
 		
-		//System.out.println(partition.stream().max((Particao u1, Particao u2) -> 
-			//Integer.compare(u1.getTamanho(), u2.getTamanho())).get().getTamanho());
+		/*System.out.println(partition.stream().min((Particao u1, Particao u2) -> 
+			Integer.compare(u1.getTamanho(), u2.getTamanho())).get().getTamanho());
 		
-		
+		System.exit(0); */
 		
 		memoryGen.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -128,8 +128,9 @@ public class Start  extends JFrame  {
 		});	
 		
 		setIconImage(getIcon().getImage());
+		
+		
 	}
-	
 	
 	
 	public static ImageIcon getIcon() {
