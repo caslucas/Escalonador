@@ -20,16 +20,16 @@ public class Utils {
 	public static void showMessage(String message, String title, int timeout) {
 		
 		
-		UIManager.put("OptionPane.messageFont", new FontUIResource(new Font("Times New Roman", Font.BOLD, 20))); 
+		UIManager.put("OptionPane.messageFont", new FontUIResource(new Font("Times New Roman", Font.BOLD, 20 ))); 
 		UIManager.put("OptionPane.messageForeground", Color.WHITE);
-
+		
 		
 		 UIManager.put ("Panel.background", new Color(79,79,79));
 		 UIManager.getDefaults().put("OptionPane.background",new Color(79,79,79));
-		 UIManager.put("OptionPane.okButtonText", JOptionPane.OK_CANCEL_OPTION);  
-		 UIManager.put("OptionPane.okButtonText", JOptionPane.QUESTION_MESSAGE);  
+		 //UIManager.put("OptionPane.okButtonText", JOptionPane.OK_CANCEL_OPTION);  
+		 UIManager.put("OptionPane.okButtonText", JOptionPane.YES_NO_OPTION);  
 		 
-		JOptionPane pane = new JOptionPane(message, JOptionPane.PLAIN_MESSAGE);
+		JOptionPane pane = new JOptionPane(message, JOptionPane.PLAIN_MESSAGE, JOptionPane.DEFAULT_OPTION, null, new Object[]{}, null);
 		
 		JDialog dialog = pane.createDialog(null, title);
 		
@@ -38,7 +38,8 @@ public class Utils {
 		
 		new Timer(timeout, new ActionListener() {
 			public void actionPerformed(ActionEvent e ) {
-				dialog.setVisible(false);				
+				dialog.setVisible(false);		
+				
 			}
 		}).start();
 	}
