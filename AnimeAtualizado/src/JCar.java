@@ -4,7 +4,10 @@
  ****************************/
 import java.awt.Font;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -206,4 +209,8 @@ public class JCar extends JLabel {
 		};
 	}
 	
+	 public void getRandomElement()  { 
+		 List<JCar> cars = new ArrayList<JCar>();
+			Collections.shuffle(cars); 
+	    } 
 }

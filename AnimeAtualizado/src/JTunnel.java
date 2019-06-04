@@ -7,6 +7,7 @@ import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -259,7 +260,7 @@ public class JTunnel extends JFrame {
 		cars.forEach((c) -> {
 			tQueueLottery.add(new Thread() {
 				public void run() {
-						c.getRandomElement(cars);
+					c.getRandomElement();
 						c.run(680, 117);
 						for (int i = c.getBoxes().size(); i > 0 ; i--) {
 							String message = i == 1 ? (i+": segundo restante"):(i+": segundos restantes");

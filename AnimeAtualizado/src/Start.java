@@ -8,6 +8,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -79,6 +80,7 @@ public class Start  extends JFrame  {
 		cars.add(new JCar("src/sava.png", 5, 8, "Processo 3"));
 		int quantum = 2;
 		int garantiaa = 1/3;
+		
 		
 		animationCar.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
