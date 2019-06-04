@@ -136,6 +136,7 @@ public class JCar extends JLabel {
 		}	
 	}
 	
+	
 	public void moveX(int limit) {
 		if(getX()<limit) {
 			while(getX()<limit) {
@@ -204,4 +205,5 @@ public class JCar extends JLabel {
 			}
 		};
 	}
+	
 }

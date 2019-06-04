@@ -26,6 +26,7 @@ public class JTunnel extends JFrame {
 	JButton RR  		= new JButton("RR");
 	JButton priority	= new JButton("Priority");
 	JButton random		= new JButton("Random");
+	JButton lottery		= new JButton("Loteria");
 	JButton music 		= new JButton("");
 	JButton voltar 		= new JButton("Voltar");
 	JLabel back 		= new JLabel(new ImageIcon("src/backkk2.png"));
@@ -53,11 +54,16 @@ public class JTunnel extends JFrame {
 	private ConcurrentLinkedQueue<Thread>  tQueuePriority =
             new ConcurrentLinkedQueue<Thread>();
 	
+	private ConcurrentLinkedQueue<Thread>  tQueueGarantia =
+            new ConcurrentLinkedQueue<Thread>();
+	
 	
 	private int quantum;
-	public JTunnel(List<JCar> cars, int quantum) {
+	private int garantia;
+	public JTunnel(List<JCar> cars, int quantum, int garantia) {
 		this.cars = cars;
 		this.quantum = quantum;
+		this.garantia = garantia;
 		init();
 	}
 	
@@ -71,13 +77,14 @@ public class JTunnel extends JFrame {
 		setVisible				(true);
 		setLayout				(null);
 			
-		fogo.setBounds	(750, 3, 100, 312);
+		fogo.setBounds		(750, 3, 100, 312);
 		aviao.setBounds 	(750, 5, 600, 100);
 		FCFS.setBounds 		(10, 35, 100, 20);
 		SJF.setBounds 		(120, 35, 100, 20);
 		RR.setBounds 		(230, 35, 100, 20);
 		priority.setBounds 	(340, 35, 100, 20);
 		random.setBounds 	(450, 35, 100, 20);
+		lottery.setBounds	(560, 35, 100, 20);
 		music.setBounds		(750, 10 , 600, 85);
 		voltar.setBounds	(1230, 350, 110, 50);
 		back.setBounds		(0, 0, 1400, 450);
@@ -110,6 +117,11 @@ public class JTunnel extends JFrame {
 		random.setBackground(Color.white);
 		random.setForeground(Color.black);
 		
+		lottery.setOpaque(false);
+		lottery.setBorder(new LineBorder(Color.black));
+		lottery.setBackground(Color.white);
+		lottery.setForeground(Color.black);
+		
 		music.setOpaque(false);
 		music.setBorder(null); 
 		music.setBackground(Color.white);
@@ -131,6 +143,7 @@ public class JTunnel extends JFrame {
 		add(RR);
 		add(priority);
 		add(random);
+		add(lottery);
 		add(music);
 		add(voltar);
 		add(camada);
@@ -239,6 +252,27 @@ public class JTunnel extends JFrame {
 				}
 			});
 		});
+		
+		
+		cars.forEach((c) -> {
+			tQueueGarantia.add(new Thread() {
+				public void run() {
+						c.run(680, 117);
+						for (int i = c.getBoxes().size(); i > 0 ; i--) {
+							String message = i == 1 ? (i+": segundo restante"):(i+": segundos restantes");
+							Utils.showMessage(message,"Processando...", 800);
+							try {
+								Thread.sleep(1000);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+						}
+						c.removeAllBoxes();
+						c.runAsThread(2000, 117).start();
+				}
+			});
+		});
+		
 		add(nomeCamada);
 		add(camada2);
 		add(back);
@@ -424,6 +458,24 @@ public class JTunnel extends JFrame {
 				mp3player.play();
 			}
 			
+		});
+		
+		lottery.addActionListener( new ActionListener() {   
+			public void actionPerformed(ActionEvent e) {
+				new Thread() {
+					public void run() {
+						tQueue.forEach(t -> {
+							t.start();
+							try {
+								t.join();
+							} catch (InterruptedException e1) {
+								e1.printStackTrace();
+							}
+						});
+					}
+				}.start();
+				mp3player.play();
+			}
 		});
 		
 		 setIconImage(getIcon().getImage());

@@ -78,11 +78,11 @@ public class Start  extends JFrame  {
 		cars.add(new JCar("src/sava.png", 3, 8, "Processo 2"));
 		cars.add(new JCar("src/sava.png", 5, 8, "Processo 3"));
 		int quantum = 2;
-		
+		int garantiaa = 1/3;
 		
 		animationCar.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new JTunnel(cars, quantum);
+				new JTunnel(cars, quantum, garantiaa);
 				dispose();
 				
 			}
