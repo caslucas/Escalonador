@@ -122,14 +122,10 @@ public class Start  extends JFrame  {
 		memoryGen.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new JMemory(boxess, tam, partition);
-				dispose();
-				
+				dispose();		
 			}
 		});	
-		
 		setIconImage(getIcon().getImage());
-		
-		
 	}
 	
 	

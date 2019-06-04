@@ -7,6 +7,7 @@ import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -54,7 +55,7 @@ public class JTunnel extends JFrame {
 	private ConcurrentLinkedQueue<Thread>  tQueuePriority =
             new ConcurrentLinkedQueue<Thread>();
 	
-	private ConcurrentLinkedQueue<Thread>  tQueueGarantia =
+	private ConcurrentLinkedQueue<Thread>  tQueueLottery =
             new ConcurrentLinkedQueue<Thread>();
 	
 	
@@ -253,10 +254,12 @@ public class JTunnel extends JFrame {
 			});
 		});
 		
+		Collections.shuffle(cars); 
 		
 		cars.forEach((c) -> {
-			tQueueGarantia.add(new Thread() {
+			tQueueLottery.add(new Thread() {
 				public void run() {
+						c.getRandomElement(cars);
 						c.run(680, 117);
 						for (int i = c.getBoxes().size(); i > 0 ; i--) {
 							String message = i == 1 ? (i+": segundo restante"):(i+": segundos restantes");
@@ -459,12 +462,12 @@ public class JTunnel extends JFrame {
 			}
 			
 		});
-		
+		 
 		lottery.addActionListener( new ActionListener() {   
 			public void actionPerformed(ActionEvent e) {
 				new Thread() {
 					public void run() {
-						tQueue.forEach(t -> {
+						tQueueLottery.forEach(t -> {
 							t.start();
 							try {
 								t.join();
