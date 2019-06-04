@@ -4,6 +4,7 @@
  ****************************/
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
@@ -21,13 +22,15 @@ public class Utils {
 		
 		
 		UIManager.put("OptionPane.messageFont", new FontUIResource(new Font("Times New Roman", Font.BOLD, 20 ))); 
-		UIManager.put("OptionPane.messageForeground", Color.WHITE);
+		UIManager.put("OptionPane.messageForeground", Color.BLACK);
+		UIManager.put("OptionPane.minimumSize",	new Dimension(200,100));
+		UIManager.put(" OptionPane.label", SwingConstants.CENTER);
+
 		
 		
-		 UIManager.put ("Panel.background", new Color(79,79,79));
-		 UIManager.getDefaults().put("OptionPane.background",new Color(79,79,79));
-		 //UIManager.put("OptionPane.okButtonText", JOptionPane.OK_CANCEL_OPTION);  
-		 UIManager.put("OptionPane.okButtonText", JOptionPane.YES_NO_OPTION);  
+		 UIManager.put ("Panel.background", new Color(247,248,250));
+		 UIManager.getDefaults().put("OptionPane.background",new Color(247,248,250));
+		 
 		 
 		JOptionPane pane = new JOptionPane(message, JOptionPane.PLAIN_MESSAGE, JOptionPane.DEFAULT_OPTION, null, new Object[]{}, null);
 		
