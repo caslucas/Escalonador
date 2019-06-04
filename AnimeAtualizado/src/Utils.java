@@ -9,24 +9,27 @@ import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import java.awt.event.ActionListener;
 
-import javax.swing.JDialog;
-import javax.swing.JOptionPane;
-import javax.swing.Timer;
-
 public class Utils {
 	
+	private static final ImageIcon ICONINFO = new ImageIcon("src/images/teste.png");
+	
+	public static ImageIcon getIconinfo() {
+		return ICONINFO;
+	}
+
 	public static void showMessage(String message, String title, int timeout) {
 		
 		
-		UIManager.put("OptionPane.messageFont", new FontUIResource(new Font("Times New Roman", Font.BOLD, 18))); 
+		UIManager.put("OptionPane.messageFont", new FontUIResource(new Font("Times New Roman", Font.BOLD, 20))); 
 		UIManager.put("OptionPane.messageForeground", Color.WHITE);
-		UIManager.getIcon("Table.removeIcon");    
+
+		
 		 UIManager.put ("Panel.background", new Color(79,79,79));
 		 UIManager.getDefaults().put("OptionPane.background",new Color(79,79,79));
 		 UIManager.put("OptionPane.okButtonText", JOptionPane.OK_CANCEL_OPTION);  
 		 UIManager.put("OptionPane.okButtonText", JOptionPane.QUESTION_MESSAGE);  
 		 
-		JOptionPane pane = new JOptionPane(message, JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane pane = new JOptionPane(message, JOptionPane.PLAIN_MESSAGE);
 		
 		JDialog dialog = pane.createDialog(null, title);
 		
