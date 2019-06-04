@@ -95,9 +95,9 @@ public class Start  extends JFrame  {
 		boxess.add(new JBoxMemory("src/caixa.png",2, 5));
 		boxess.add(new JBoxMemory("src/caixa.png",2, 5));
 		boxess.add(new JBoxMemory("src/caixa.png",4, 5));
-		boxess.add(new JBoxMemory("src/caixa.png",3, 5));
-		boxess.add(new JBoxMemory("src/caixa.png",1, 5));	
+		boxess.add(new JBoxMemory("src/caixa.png",2, 5));
 		boxess.add(new JBoxMemory("src/caixa.png",2, 5));	
+		boxess.add(new JBoxMemory("src/caixa.png",1, 5));	
 		
 		int tam = 8;
 	
