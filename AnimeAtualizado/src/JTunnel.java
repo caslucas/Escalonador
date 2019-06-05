@@ -308,10 +308,11 @@ public class JTunnel extends JFrame {
 		
 		voltar.addActionListener( new ActionListener() {   
 			public void actionPerformed(ActionEvent e) {
-				mp3player.stop();
-				new Start();
+				new Start(mp3player1);
 				dispose();
-				
+				mp3player.stop();
+				mp3player1.play();
+					
 			}
 		});
 			
@@ -520,6 +521,11 @@ public class JTunnel extends JFrame {
 	
 	MP3Player mp3player = new MP3Player(new File(SONG));
 
+	
+	public static final String SONGG = "src/music/tokio.mp3";
+	
+	MP3Player mp3player1 = new MP3Player(new File(SONGG));
+	
 	public static ImageIcon getIcon() {
 		return ICON;
 	}

@@ -4,6 +4,7 @@ import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -19,6 +20,8 @@ import javax.swing.border.LineBorder;
 
 import com.sun.org.apache.bcel.internal.generic.BREAKPOINT;
 import com.sun.org.apache.xml.internal.resolver.helpers.Debug;
+
+import jaco.mp3.player.MP3Player;
 
 public class JMemory extends JFrame {
 
@@ -37,7 +40,7 @@ public class JMemory extends JFrame {
 
 	JLabel memory = new JLabel(new ImageIcon(getClass().getResource("memory.png")));
 	JLabel memory2 = new JLabel(new ImageIcon(getClass().getResource("memory.png")));
-	JLabel back = new JLabel(new ImageIcon(getClass().getResource("gif.gif")));
+	JLabel back = new JLabel(new ImageIcon(getClass().getResource("giphy.gif")));
 	JLabel ram = new JLabel(new ImageIcon(getClass().getResource("arquivoMorto4.png")));
 	JButton firstFit = new JButton("First Fit");
 	JButton worstFit = new JButton("Worst Fit");
@@ -135,8 +138,9 @@ public class JMemory extends JFrame {
 
 		voltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Start();
+				new Start(mp3player1);
 				dispose();
+				mp3player1.play();
 			}
 		});
 
@@ -345,6 +349,14 @@ public class JMemory extends JFrame {
 				}.start();
 			}
 		});
+		
 	}
+	
+	public static final String SONGG = "src/music/tokio.mp3";
+	
+	MP3Player mp3player1 = new MP3Player(new File(SONGG));
+	
+	
+	
 
 }

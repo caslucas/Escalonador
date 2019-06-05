@@ -1,3 +1,6 @@
+import java.io.File;
+
+import jaco.mp3.player.MP3Player;
 
 public class Particao  {
 	
@@ -27,9 +30,11 @@ public class Particao  {
 		this.posCheckY = posCheckY;
 		this.posParadaX = posParadaX;
 		this.posParadaY = posParadaY;
+		
+		
 	}
 	
-
+	
 	public int getTamanho() {
 		return tamanho;
 	}
@@ -61,16 +66,13 @@ public class Particao  {
 	public void proxPosicao() {
 		
 		this.posParadaX -= 44;
-	}
-	
-	public void proxParticao() {
-		
-		if( getTamanho() >0) {
-			
-		}
+		mp3player1.play();
 		
 	}
 	
+	public static final String SONG = "src/music/puloMario.mp3";
 	
-
+	MP3Player mp3player1 = new MP3Player(new File(SONG));
+	
+	
 }

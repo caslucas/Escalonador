@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Desktop;
 import java.awt.Font;
+import java.awt.GraphicsConfiguration;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -21,6 +22,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.border.LineBorder;
+
+import jaco.mp3.player.MP3Player;
 
 
 
@@ -41,7 +44,7 @@ public class Start  extends JFrame  {
 	
 	
 	
-	public Start(){
+	public Start(MP3Player mp){
 		Container main = getContentPane();
 		main.setLayout(null);
 		
@@ -101,7 +104,9 @@ public class Start  extends JFrame  {
 			public void actionPerformed(ActionEvent e) {
 				new JTunnel(cars, quantum, garantiaa);
 				dispose();
-				
+			
+			
+				mp.stop();
 			}
 		});	
 		
@@ -139,7 +144,9 @@ public class Start  extends JFrame  {
 		memoryGen.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new JMemory(boxess, tam, partition);
-				dispose();		
+				dispose();	
+				
+				mp.stop();
 			}
 		});	
 		
@@ -156,14 +163,21 @@ public class Start  extends JFrame  {
 		});	
 		
 		setIconImage(getIcon().getImage());
+		
 	}
 	
-	
+
+
 	public static ImageIcon getIcon() {
 		return ICON;
 	}
 	
 	public static void main(String[] args) {
-		new Start();
+		final String SONG = "src/music/tokio.mp3";
+		
+		MP3Player mp3player1 = new MP3Player(new File(SONG));
+		new Start(mp3player1);
+		mp3player1.play();
+
 	}
 }
