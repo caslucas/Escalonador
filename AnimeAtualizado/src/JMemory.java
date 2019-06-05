@@ -168,6 +168,8 @@ public class JMemory extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				new Thread() {
 					public void run() {
+						String firstFit = ("Rodando processo: First Fit");
+						Utils.showMessage(firstFit, "FirstFit", 1000);
 						tQueueFirstFit.forEach(t -> {
 							t.start();
 							try {
@@ -220,6 +222,8 @@ public class JMemory extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				new Thread() {
 					public void run() {
+						String worstFit = ("Rodando processo: Wost Fit");
+						Utils.showMessage(worstFit, "WorstFit", 1000);
 						tQueueWorstFit.forEach(t -> {
 							t.start();
 							try {
@@ -270,6 +274,8 @@ public class JMemory extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				new Thread() {
 					public void run() {
+						String bestFit = ("Rodando processo: Best Fit");
+						Utils.showMessage(bestFit, "BestFit", 1000);
 						tQueueBestFit.forEach(t -> {
 							t.start();
 							try {
@@ -324,6 +330,8 @@ public class JMemory extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				new Thread() {
 					public void run() {
+						String nextFit = ("Rodando processo: Next Fit");
+						Utils.showMessage(nextFit, "NextFit", 1000);
 						tQueueNextFit.forEach(t -> {
 							t.start();
 							try {
