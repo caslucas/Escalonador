@@ -331,7 +331,6 @@ public class JTunnel extends JFrame {
 						});
 					}
 				}.start();
-				mp3player.play();
 			}
 		});
 		
@@ -349,7 +348,6 @@ public class JTunnel extends JFrame {
 							});
 						}
 					}.start();
-					//mp3player.play();
 				}
 			});
 		
@@ -395,7 +393,6 @@ public class JTunnel extends JFrame {
 						}
 					}
 				}.start();
-				mp3player.play();
 			}
 		});
 		
@@ -413,7 +410,6 @@ public class JTunnel extends JFrame {
 						});
 					}
 				}.start();
-				mp3player.play();
 			}
 		});
 		
@@ -486,7 +482,6 @@ public class JTunnel extends JFrame {
 						}
 					}.start();
 				}
-				mp3player.play();
 			}
 			
 		});
@@ -505,7 +500,6 @@ public class JTunnel extends JFrame {
 						});
 					}
 				}.start();
-				mp3player.play();
 			}
 		});
 		
