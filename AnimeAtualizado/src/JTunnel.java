@@ -275,6 +275,7 @@ public class JTunnel extends JFrame {
 				public void run() {
 					c.getRandomElement();
 						c.run(680, 117);
+						
 						for (int i = c.getBoxes().size(); i > 0 ; i--) {
 							String message = i == 1 ? (i+": segundo restante"):(i+": segundos restantes");
 							Utils.showMessage(message,"Processando...", 800);
@@ -348,7 +349,7 @@ public class JTunnel extends JFrame {
 							});
 						}
 					}.start();
-					mp3player.play();
+					//mp3player.play();
 				}
 			});
 		
@@ -517,7 +518,7 @@ public class JTunnel extends JFrame {
 		 });
 	}
 	 
-	public static final String SONG = "src/music/di1.mp3";
+	public static final String SONG = "src/music/carSong.mp3";
 	
 	MP3Player mp3player = new MP3Player(new File(SONG));
 

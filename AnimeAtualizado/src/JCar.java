@@ -3,6 +3,7 @@
  * Email: lulima559@gmail.com
  ****************************/
 import java.awt.Font;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -11,6 +12,8 @@ import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+
+import jaco.mp3.player.MP3Player;
 
 public class JCar extends JLabel {
 	public String Name;
@@ -114,7 +117,14 @@ public class JCar extends JLabel {
 	public void run(int limit, int posY) {
 		moveY(posY);
 		moveX(limit);
+		
+		mp3player.play();
+		
 	}
+	
+	public static final String SONG = "src/music/carsom.mp3";
+	
+	MP3Player mp3player = new MP3Player(new File(SONG));
 	
 	public Thread runAsThread(int limit, int posY) {
 		return new Thread() {
