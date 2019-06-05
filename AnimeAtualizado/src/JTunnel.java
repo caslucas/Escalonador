@@ -4,9 +4,11 @@
  ****************************/
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -31,12 +33,14 @@ public class JTunnel extends JFrame {
 	JButton lottery		= new JButton("Loteria");
 	JButton music 		= new JButton("");
 	JButton voltar 		= new JButton("Voltar");
+	JButton pdf 		= new JButton("Abrir PDF");
 	JLabel back 		= new JLabel(new ImageIcon("src/backkk2.png"));
 	JLabel camada 		= new JLabel(new ImageIcon("src/camada.png"));
 	JLabel camada2 		= new JLabel(new ImageIcon("src/camada2.png"));
 	JLabel nomeCamada 		= new JLabel(new ImageIcon("src/NomeCamada.png"));
 	JLabel aviao 		= new JLabel(new ImageIcon("src/aviao.gif"));
 	JLabel fogo		= new JLabel(new ImageIcon("src/fogo.gif"));
+	Desktop desktop = Desktop.getDesktop();
     private static final ImageIcon ICON = new ImageIcon("src/capa.png");
     
 	List<JCar> cars = null;
@@ -93,6 +97,8 @@ public class JTunnel extends JFrame {
 		camada.setBounds	(300, 35, 900, 312);
 		camada2.setBounds	(50, 35, 900, 312);
 		nomeCamada.setBounds	(300, 0, 900, 100);
+		pdf.setBounds(10, 60, 100, 20);  
+		
 		
 		SJF.setOpaque(false);
 		SJF.setBorder(new LineBorder(Color.black));
@@ -124,6 +130,11 @@ public class JTunnel extends JFrame {
 		lottery.setBackground(Color.white);
 		lottery.setForeground(Color.black);
 		
+		pdf.setOpaque(false);
+		pdf.setBorder(new LineBorder(Color.black));
+		pdf.setBackground(Color.white);
+		pdf.setForeground(Color.black);
+		
 		music.setOpaque(false);
 		music.setBorder(null); 
 		music.setBackground(Color.white);
@@ -141,6 +152,7 @@ public class JTunnel extends JFrame {
 		
 		//add(aviao);
 		add(FCFS);
+		add(pdf);
 		add(SJF);
 		add(RR);
 		add(priority);
@@ -167,6 +179,7 @@ public class JTunnel extends JFrame {
 				public void run() {
 					c.run(680, 117);			
 					for (int i = c.getBoxes().size(); i > 0 ; i--) {
+						
 						String message = i == 1 ? (i+": segundo restante"):(i+": segundos restantes");
 						Utils.showMessage(message,"Processando...", 800);
 						try {
@@ -280,6 +293,18 @@ public class JTunnel extends JFrame {
 		add(nomeCamada);
 		add(camada2);
 		add(back);
+		
+		pdf.addActionListener( new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				try {
+					desktop.open(new File("src/pesquisa.pdf"));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		
 		voltar.addActionListener( new ActionListener() {   
 			public void actionPerformed(ActionEvent e) {

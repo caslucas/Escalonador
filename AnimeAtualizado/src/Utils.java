@@ -25,7 +25,6 @@ public class Utils {
 		UIManager.put("OptionPane.messageForeground", Color.BLACK);
 		UIManager.put("OptionPane.minimumSize",	new Dimension(200,100));
 		UIManager.put(" OptionPane.label", SwingConstants.CENTER);
-
 		
 		
 		 UIManager.put ("Panel.background", new Color(247,248,250));
