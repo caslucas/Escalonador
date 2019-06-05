@@ -148,7 +148,7 @@ public class JMemory extends JFrame {
 		boxes.forEach((c) -> {
 			tQueueFirstFit.add(new Thread() {
 				public void run() {
-					c.run(255, 3);
+					c.run(255, 40);
 					for (Particao p : particoes) {
 						c.run(255, p.getPosCheckY());
 						try {
@@ -195,7 +195,7 @@ public class JMemory extends JFrame {
 		boxes.forEach((c) -> {
 			tQueueWorstFit.add(new Thread() {
 				public void run() {
-					c.run(255, 3);
+					c.run(255, 40);
 
 					// List<Particao> particoes = new ArrayList<Particao>();
 					Particao max = null;
@@ -246,7 +246,7 @@ public class JMemory extends JFrame {
 		boxes.forEach((c) -> {
 			tQueueBestFit.add(new Thread() {
 				public void run() {
-					c.run(255, 3);
+					c.run(255, 40);
 
 					List<Particao> pp = particoes.stream().filter(p -> p.getTamanho() >= c.getTamProcess())
 							.sorted((p1, p2) -> p1.getTamanho() - p2.getTamanho()).collect(Collectors.toList());
@@ -298,7 +298,7 @@ public class JMemory extends JFrame {
 		boxes.forEach((c) -> {
 			tQueueNextFit.add(new Thread() {
 				public void run() {
-					c.run(255, 3);
+					c.run(255, 40);
 
 					for (Particao p : particoes) {
 						c.run(255, p.getPosCheckY());
