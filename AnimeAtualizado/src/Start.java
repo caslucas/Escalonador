@@ -4,9 +4,12 @@
  ****************************/
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Desktop;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -32,6 +35,9 @@ public class Start  extends JFrame  {
 	JLabel label = new JLabel(new ImageIcon(getClass().getResource("tog.png")));
 	JButton animationCar = new JButton("Animação Escalonador");
 	JButton memoryGen = new JButton("Animação  Memoria");
+	JButton pdf = new JButton("Abrir PDF ");
+	Desktop desktop = Desktop.getDesktop();  
+	
 	
 	
 	public Start(){
@@ -40,6 +46,7 @@ public class Start  extends JFrame  {
 		
 		animationCar.setBounds		(300,300,300,50);
 		memoryGen.setBounds			(800,300,300,50);
+		pdf.setBounds				(10, 300, 110, 100);
 		label.setBounds				(200, 0, 957, 110);
 		back.setBounds				(0, 0, 1400, 450);
 			
@@ -54,10 +61,17 @@ public class Start  extends JFrame  {
 		animationCar.setBackground(Color.white);
 		animationCar.setForeground(Color.black);
 		animationCar.setFont(new Font("Dialog", Font.BOLD, 20));
-	
+		
+		pdf.setOpaque(false);
+		pdf.setBorder(null); 
+		pdf.setBackground(Color.white);
+		pdf.setForeground(Color.black);
+		pdf.setFocusable(false);
+		pdf.setIcon(new ImageIcon("src/iconPDF.png"));
 		
 		add(memoryGen);
 		add(animationCar);
+		add(pdf);
 		add(label);
 		add(back);
 		
@@ -127,6 +141,19 @@ public class Start  extends JFrame  {
 				dispose();		
 			}
 		});	
+		
+		
+		pdf.addActionListener( new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					desktop.open(new File("src/pesquisa.pdf"));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}  
+			}
+		});	
+		
 		setIconImage(getIcon().getImage());
 	}
 	
