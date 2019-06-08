@@ -70,9 +70,15 @@ public class Particao  {
 		
 	}
 	
+	public void finalMusic() {
+		mp3player2.play();
+	}
+	
 	public static final String SONG = "src/music/puloMario.mp3";
 	
 	MP3Player mp3player1 = new MP3Player(new File(SONG));
 	
+	public static final String SOG = "src/music/classicMario.mp3";
 	
+	MP3Player mp3player2 = new MP3Player(new File(SOG));
 }

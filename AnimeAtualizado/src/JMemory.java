@@ -156,15 +156,22 @@ public class JMemory extends JFrame {
 						} catch (InterruptedException e) {
 							e.printStackTrace();
 						}
-
+						
 						if (c.getTamProcess() <= p.getTamanho()) {
 							p.tamanho = p.getTamanho() - c.getTamProcess();
 							c.run(p.getPosParadaX(), c.getY());
 							p.proxPosicao();
+							
 							break;
+							
+							
 						}
+						
 					}
+
 				}
+				
+				
 			});
 		});
 
@@ -181,8 +188,10 @@ public class JMemory extends JFrame {
 							} catch (InterruptedException e1) {
 								e1.printStackTrace();
 							}
-
+							
+							
 						});
+						mp3player2.play();
 					}
 				}.start();
 			}
@@ -237,6 +246,7 @@ public class JMemory extends JFrame {
 							}
 
 						});
+						mp3player2.play();
 					}
 				}.start();
 			}
@@ -289,6 +299,7 @@ public class JMemory extends JFrame {
 							}
 
 						});
+						mp3player2.play();
 					}
 				}.start();
 			}
@@ -345,6 +356,7 @@ public class JMemory extends JFrame {
 							}
 
 						});
+						mp3player2.play();
 					}
 				}.start();
 			}
@@ -355,6 +367,10 @@ public class JMemory extends JFrame {
 	public static final String SONGG = "src/music/tokio.mp3";
 	
 	MP3Player mp3player1 = new MP3Player(new File(SONGG));
+	
+	public static final String SOG = "src/music/classicMario.mp3";
+	
+	MP3Player mp3player2 = new MP3Player(new File(SOG));
 	
 	
 	
