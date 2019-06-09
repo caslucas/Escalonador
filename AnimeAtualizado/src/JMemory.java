@@ -41,7 +41,7 @@ public class JMemory extends JFrame {
 	JLabel memory = new JLabel(new ImageIcon(("src/images/memory.png")));
 	JLabel memory2 = new JLabel(new ImageIcon(("src/images/memory.png")));
 	JLabel back = new JLabel(new ImageIcon(("src/images/giphy.gif")));
-	JLabel ram = new JLabel(new ImageIcon(("src/images/arquivoMorto4.png")));
+	JLabel ram = new JLabel(new ImageIcon(("src/images/novaMemoria2.png")));
 	JButton firstFit = new JButton("First Fit");
 	JButton worstFit = new JButton("Worst Fit");
 	JButton bestFit = new JButton("Best Fit");
@@ -75,8 +75,8 @@ public class JMemory extends JFrame {
 		bestFit.setBounds(250, 430, 100, 20);
 		worstFit.setBounds(130, 430, 100, 20);
 		firstFit.setBounds(10, 430, 100, 20);
-		ram.setBounds(240, 10, 300, 400);
-		back.setBounds(0, 0, 500, 500);
+		ram.setBounds(240, 10, 350, 400);
+		back.setBounds(0, 0, 611, 500);
 
 		add(firstFit);
 		add(worstFit);
@@ -116,7 +116,7 @@ public class JMemory extends JFrame {
 		voltar.setFocusable(false);
 		voltar.setIcon(new ImageIcon("src/images/voltar2.png"));
 
-		setSize(500, 500);
+		setSize(610, 500);
 		setVisible(true);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -142,9 +142,9 @@ public class JMemory extends JFrame {
 		boxes.forEach((c) -> {
 			tQueueFirstFit.add(new Thread() {
 				public void run() {
-					c.run(255, 40);
+					c.run(190, 44);
 					for (Particao p : particoes) {
-						c.run(255, p.getPosCheckY());
+						c.run(190, p.getPosCheckY());
 						try {
 							Thread.sleep(800);
 						} catch (InterruptedException e) {
@@ -157,7 +157,7 @@ public class JMemory extends JFrame {
 							p.proxPosicao();
 							
 							break;							
-						}	
+						}
 					}
 				}		
 			});

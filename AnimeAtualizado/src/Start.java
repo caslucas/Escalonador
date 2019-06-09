@@ -113,13 +113,13 @@ public class Start  extends JFrame  {
 		
 		List<JBoxMemory> boxess = new ArrayList<JBoxMemory>();
 		
-		boxess.add(new JBoxMemory("src/images/caixa.png",1, 5, "DHCP: 1"));
-		boxess.add(new JBoxMemory("src/images/caixa.png",2, 5,""));
-		boxess.add(new JBoxMemory("src/images/caixa.png",2, 5,""));
-		boxess.add(new JBoxMemory("src/images/caixa.png",4, 5,""));
-		boxess.add(new JBoxMemory("src/images/caixa.png",2, 5,""));
-		boxess.add(new JBoxMemory("src/images/caixa.png",2, 5,""));	
-		boxess.add(new JBoxMemory("src/images/caixa.png",1, 5,""));	
+		boxess.add(new JBoxMemory("src/images/caixa.png",1, 5,"DHCP: 1"));
+		boxess.add(new JBoxMemory("src/images/caixa.png",2, 5,"TCP:  2"));
+		boxess.add(new JBoxMemory("src/images/caixa.png",2, 5,"HTTP: 2"));
+		boxess.add(new JBoxMemory("src/images/caixa.png",4, 5,"FTP:  4"));
+		boxess.add(new JBoxMemory("src/images/caixa.png",2, 5,"SSH:  2"));
+		boxess.add(new JBoxMemory("src/images/caixa.png",2, 5,"POP3: 2"));	
+		boxess.add(new JBoxMemory("src/images/caixa.png",1, 5,"SMTP: 1"));	
 		
 		int tam = 8;
 	
@@ -128,11 +128,11 @@ public class Start  extends JFrame  {
 		
 		List<Particao> partition = new ArrayList<Particao>();
 		
-		partition.add(new Particao(5, 255, 60, 407, 56));
-		partition.add(new Particao(0, 280, 118, 407, 56));
-		partition.add(new Particao(8, 280, 177, 407, 56)); 
-		partition.add(new Particao(0, 280, 238, 407, 56));
-		partition.add(new Particao(2, 280, 302, 319, 56));
+		partition.add(new Particao(5, 190, 72, 438, 56));
+		partition.add(new Particao(0, 280, 127, 438, 56));
+		partition.add(new Particao(8, 280, 180, 438, 56)); 
+		partition.add(new Particao(0, 280, 238, 438, 56));
+		partition.add(new Particao(2, 280, 296, 278, 56));
 
 
 		

@@ -65,7 +65,7 @@ public class Particao  {
 	
 	public void proxPosicao() {
 		
-		this.posParadaX -= 44;
+		this.posParadaX -= 80;
 		mp3player1.play();
 		
 	}
