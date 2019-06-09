@@ -116,7 +116,7 @@ public class JMemory extends JFrame {
 		voltar.setFocusable(false);
 		voltar.setIcon(new ImageIcon("src/images/voltar2.png"));
 
-		setSize(610, 500);
+		setSize(612, 500);
 		setVisible(true);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -142,9 +142,9 @@ public class JMemory extends JFrame {
 		boxes.forEach((c) -> {
 			tQueueFirstFit.add(new Thread() {
 				public void run() {
-					c.run(190, 44);
+					c.run(218, 44);
 					for (Particao p : particoes) {
-						c.run(190, p.getPosCheckY());
+						c.run(218, p.getPosCheckY());
 						try {
 							Thread.sleep(800);
 						} catch (InterruptedException e) {
@@ -188,7 +188,7 @@ public class JMemory extends JFrame {
 		boxes.forEach((c) -> {
 			tQueueWorstFit.add(new Thread() {
 				public void run() {
-					c.run(255, 40);
+					c.run(218, 44);
 	
 					Particao max = null;
 				
@@ -196,7 +196,7 @@ public class JMemory extends JFrame {
 
 					for (Particao p : particoes) {
 
-						c.run(255, p.getPosCheckY());
+						c.run(218, p.getPosCheckY());
 						try {
 							Thread.sleep(800);
 						} catch (InterruptedException e) {
@@ -237,7 +237,7 @@ public class JMemory extends JFrame {
 		boxes.forEach((c) -> {
 			tQueueBestFit.add(new Thread() {
 				public void run() {
-					c.run(255, 40);
+					c.run(218, 40);
 
 					List<Particao> pp = particoes.stream().filter(p -> p.getTamanho() >= c.getTamProcess())
 							.sorted((p1, p2) -> p1.getTamanho() - p2.getTamanho()).collect(Collectors.toList());
@@ -247,7 +247,7 @@ public class JMemory extends JFrame {
 
 					for (Particao p : particoes) {
 
-						c.run(255, p.getPosCheckY());
+						c.run(218, p.getPosCheckY());
 						try {
 							Thread.sleep(800);
 						} catch (InterruptedException e) {
@@ -289,10 +289,10 @@ public class JMemory extends JFrame {
 		boxes.forEach((c) -> {
 			tQueueNextFit.add(new Thread() {
 				public void run() {
-					c.run(255, 40);
+					c.run(218, 40);
 
 					for (Particao p : particoes) {
-						c.run(255, p.getPosCheckY());
+						c.run(218, p.getPosCheckY());
 						try {
 							Thread.sleep(800);
 						} catch (InterruptedException e) {
