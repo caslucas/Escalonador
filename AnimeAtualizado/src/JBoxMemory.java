@@ -17,16 +17,19 @@ public class JBoxMemory extends JLabel {
 	private boolean hasAnyThreadRunning = false;
 	int tamProcess = 0;
 	int velocity = 12;
-
+	
+	String name;
 	public int getTamProcess() {
 		return tamProcess;
 	}
 	
-	public JBoxMemory(String iconPath, int tamProcess, int velocity) {
+	public JBoxMemory(String iconPath, int tamProcess, int velocity, String name) {
 		this.tamProcess = tamProcess;
 		this.velocity = velocity;
+		this.name = name;
 		setIcon(new ImageIcon(iconPath));
 		setText(String.valueOf(tamProcess));
+		setText(name);
 		setForeground(Color.BLACK);
 		setHorizontalTextPosition(CENTER);
 		setFont(new Font("SansSerif", Font.BOLD, 17));

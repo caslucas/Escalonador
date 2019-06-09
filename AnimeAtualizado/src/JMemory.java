@@ -38,10 +38,10 @@ public class JMemory extends JFrame {
 
 	private ConcurrentLinkedQueue<Thread> tQueueNextFit = new ConcurrentLinkedQueue<Thread>();
 
-	JLabel memory = new JLabel(new ImageIcon(getClass().getResource("memory.png")));
-	JLabel memory2 = new JLabel(new ImageIcon(getClass().getResource("memory.png")));
-	JLabel back = new JLabel(new ImageIcon(getClass().getResource("giphy.gif")));
-	JLabel ram = new JLabel(new ImageIcon(getClass().getResource("arquivoMorto4.png")));
+	JLabel memory = new JLabel(new ImageIcon(("src/images/memory.png")));
+	JLabel memory2 = new JLabel(new ImageIcon(("src/images/memory.png")));
+	JLabel back = new JLabel(new ImageIcon(("src/images/giphy.gif")));
+	JLabel ram = new JLabel(new ImageIcon(("src/images/arquivoMorto4.png")));
 	JButton firstFit = new JButton("First Fit");
 	JButton worstFit = new JButton("Worst Fit");
 	JButton bestFit = new JButton("Best Fit");
@@ -114,7 +114,7 @@ public class JMemory extends JFrame {
 		voltar.setBackground(Color.white);
 		voltar.setForeground(Color.white);
 		voltar.setFocusable(false);
-		voltar.setIcon(new ImageIcon("src/voltar2.png"));
+		voltar.setIcon(new ImageIcon("src/images/voltar2.png"));
 
 		setSize(500, 500);
 		setVisible(true);
@@ -128,14 +128,9 @@ public class JMemory extends JFrame {
 			add(c);
 		});
 
-		particoes.forEach((p) -> {
-
-			// add(p);
-		});
-
 		add(ram);
 		add(back);
-
+		
 		voltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new Start(mp3player1);
@@ -144,7 +139,6 @@ public class JMemory extends JFrame {
 			}
 		});
 
-		/* ########################### Tudo certo ################### */
 		boxes.forEach((c) -> {
 			tQueueFirstFit.add(new Thread() {
 				public void run() {
@@ -162,16 +156,10 @@ public class JMemory extends JFrame {
 							c.run(p.getPosParadaX(), c.getY());
 							p.proxPosicao();
 							
-							break;
-							
-							
-						}
-						
+							break;							
+						}	
 					}
-
-				}
-				
-				
+				}		
 			});
 		});
 
@@ -197,18 +185,13 @@ public class JMemory extends JFrame {
 			}
 		});
 
-		/*
-		 * ########################### Comparar o tamanho da memoria para que o processo
-		 * sempre vá para a memoria que tem maiortamanho ###################
-		 */
 		boxes.forEach((c) -> {
 			tQueueWorstFit.add(new Thread() {
 				public void run() {
 					c.run(255, 40);
-
-					// List<Particao> particoes = new ArrayList<Particao>();
+	
 					Particao max = null;
-					// articao u1, Particao u2) -> Integer.compare(u1.getTamanho(), u2.getTamanho())
+				
 					max = particoes.stream().max(Comparator.comparing(Particao::getTamanho)).get();
 
 					for (Particao p : particoes) {
@@ -219,7 +202,7 @@ public class JMemory extends JFrame {
 						} catch (InterruptedException e) {
 							e.printStackTrace();
 						}
-
+						
 						if (p.equals(max)) {
 							p.tamanho = p.getTamanho() - c.getTamProcess();
 							c.run(p.getPosParadaX(), c.getY());
@@ -244,15 +227,13 @@ public class JMemory extends JFrame {
 							} catch (InterruptedException e1) {
 								e1.printStackTrace();
 							}
-
 						});
 						mp3player2.play();
 					}
 				}.start();
 			}
 		});
-
-		/* ############################# Arrumar Best ########################## */
+	
 		boxes.forEach((c) -> {
 			tQueueBestFit.add(new Thread() {
 				public void run() {
@@ -304,8 +285,7 @@ public class JMemory extends JFrame {
 				}.start();
 			}
 		});
-
-		/* ######################## fazer next ######################### */
+	
 		boxes.forEach((c) -> {
 			tQueueNextFit.add(new Thread() {
 				public void run() {
@@ -371,8 +351,4 @@ public class JMemory extends JFrame {
 	public static final String SOG = "src/music/classicMario.mp3";
 	
 	MP3Player mp3player2 = new MP3Player(new File(SOG));
-	
-	
-	
-
 }

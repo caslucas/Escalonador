@@ -16,7 +16,7 @@ public class JBox extends JLabel {
 	 
 
 	public JBox(int boxDefaultCoordinateX, int boxDefaulCoordinateY) {
-		setIcon(new ImageIcon("src/caixa.png"));
+		setIcon(new ImageIcon("src/images/caixa.png"));
 		setBounds(boxDefaultCoordinateX, boxDefaulCoordinateY, boxDefaultWidth, boxDefaultHeight);
 	}
 	

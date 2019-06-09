@@ -34,14 +34,14 @@ public class JTunnel extends JFrame {
 	JButton music 		= new JButton("");
 	JButton voltar 		= new JButton("Voltar");
 	JButton pdf 		= new JButton("Abrir PDF");
-	JLabel back 		= new JLabel(new ImageIcon("src/backkk2.png"));
-	JLabel camada 		= new JLabel(new ImageIcon("src/camada.png"));
-	JLabel camada2 		= new JLabel(new ImageIcon("src/camada2.png"));
-	JLabel nomeCamada 		= new JLabel(new ImageIcon("src/NomeCamada.png"));
-	JLabel aviao 		= new JLabel(new ImageIcon("src/aviao.gif"));
-	JLabel fogo		= new JLabel(new ImageIcon("src/fogo.gif"));
+	JLabel back 		= new JLabel(new ImageIcon("src/images/backkk2.png"));
+	JLabel camada 		= new JLabel(new ImageIcon("src/images/camada.png"));
+	JLabel camada2 		= new JLabel(new ImageIcon("src/images/camada2.png"));
+	JLabel nomeCamada 		= new JLabel(new ImageIcon("src/images/name.png"));
+	JLabel aviao 		= new JLabel(new ImageIcon("src/images/aviao.gif"));
+	JLabel fogo		= new JLabel(new ImageIcon("src/images/fogo.gif"));
 	Desktop desktop = Desktop.getDesktop();
-    private static final ImageIcon ICON = new ImageIcon("src/capa.png");
+    private static final ImageIcon ICON = new ImageIcon("src/images/capa.png");
     
 	List<JCar> cars = null;
 	
@@ -96,7 +96,7 @@ public class JTunnel extends JFrame {
 		back.setBounds		(0, 0, 1400, 450);
 		camada.setBounds	(300, 35, 900, 312);
 		camada2.setBounds	(50, 35, 900, 312);
-		nomeCamada.setBounds	(300, 0, 900, 100);
+		nomeCamada.setBounds	(300, 150, 900, 100);
 		pdf.setBounds(10, 60, 100, 20);  
 		
 		
@@ -140,7 +140,7 @@ public class JTunnel extends JFrame {
 		music.setBackground(Color.white);
 		music.setForeground(Color.black);
 		music.setFocusable(false);
-		music.setIcon(new ImageIcon("src/aviao.gif"));
+		music.setIcon(new ImageIcon("src/images/aviao.gif"));
 		
 		
 		voltar.setOpaque(false);
@@ -148,11 +148,11 @@ public class JTunnel extends JFrame {
 		voltar.setBackground(Color.white);
 		voltar.setForeground(Color.black);
 		voltar.setFocusable(false);
-		voltar.setIcon(new ImageIcon("src/voltar.png"));
-		
+		voltar.setIcon(new ImageIcon("src/images/voltar.png"));
+		add(nomeCamada);
 		//add(aviao);
 		add(FCFS);
-		add(pdf);
+		//add(pdf);
 		add(SJF);
 		add(RR);
 		add(priority);
@@ -291,7 +291,7 @@ public class JTunnel extends JFrame {
 			});
 		});
 		
-		add(nomeCamada);
+		
 		add(camada2);
 		add(back);
 		

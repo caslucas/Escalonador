@@ -34,9 +34,9 @@ public class Start  extends JFrame  {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private static final ImageIcon ICON = new ImageIcon("src/capa.png");
-	JLabel back = new JLabel(new ImageIcon(getClass().getResource("anigif.gif")));
-	JLabel label = new JLabel(new ImageIcon(getClass().getResource("tog.png")));
+	private static final ImageIcon ICON = new ImageIcon("src/images/capa.png");
+	JLabel back = new JLabel(new ImageIcon(("src/images/anigif.gif")));
+	JLabel label = new JLabel(new ImageIcon(("src/images/tog.png")));
 	JButton animationCar = new JButton("Animação Escalonador");
 	JButton memoryGen = new JButton("Animação  Memoria");
 	JButton pdf = new JButton("Abrir PDF ");
@@ -71,7 +71,7 @@ public class Start  extends JFrame  {
 		pdf.setBackground(Color.white);
 		pdf.setForeground(Color.black);
 		pdf.setFocusable(false);
-		pdf.setIcon(new ImageIcon("src/iconPDF.png"));
+		pdf.setIcon(new ImageIcon("src/images/iconPDF.png"));
 		
 		add(memoryGen);
 		add(animationCar);
@@ -93,9 +93,9 @@ public class Start  extends JFrame  {
 			cars.add(new JCar("src/sava.png", Integer.parseInt(JOptionPane.showInputDialog("Digite o tamanho do processo nº"+ (i+1) )), 8,""));
 		}
 		int quantum = Integer.parseInt(JOptionPane.showInputDialog("Digite o quantum de tempo"));*/
-		cars.add(new JCar("src/sava.png", 4, 8, "Processo 1"));
-		cars.add(new JCar("src/sava.png", 3, 8, "Processo 2"));
-		cars.add(new JCar("src/sava.png", 5, 8, "Processo 3"));
+		cars.add(new JCar("src/images/sava.png", 4, 8, "Processo 1"));
+		cars.add(new JCar("src/images/sava.png", 3, 8, "Processo 2"));
+		cars.add(new JCar("src/images/sava.png", 5, 8, "Processo 3"));
 		int quantum = 2;
 		int garantiaa = 1/3;
 
@@ -113,13 +113,13 @@ public class Start  extends JFrame  {
 		
 		List<JBoxMemory> boxess = new ArrayList<JBoxMemory>();
 		
-		boxess.add(new JBoxMemory("src/caixa.png",1, 5));
-		boxess.add(new JBoxMemory("src/caixa.png",2, 5));
-		boxess.add(new JBoxMemory("src/caixa.png",2, 5));
-		boxess.add(new JBoxMemory("src/caixa.png",4, 5));
-		boxess.add(new JBoxMemory("src/caixa.png",2, 5));
-		boxess.add(new JBoxMemory("src/caixa.png",2, 5));	
-		boxess.add(new JBoxMemory("src/caixa.png",1, 5));	
+		boxess.add(new JBoxMemory("src/images/caixa.png",1, 5, "DHCP: 1"));
+		boxess.add(new JBoxMemory("src/images/caixa.png",2, 5,""));
+		boxess.add(new JBoxMemory("src/images/caixa.png",2, 5,""));
+		boxess.add(new JBoxMemory("src/images/caixa.png",4, 5,""));
+		boxess.add(new JBoxMemory("src/images/caixa.png",2, 5,""));
+		boxess.add(new JBoxMemory("src/images/caixa.png",2, 5,""));	
+		boxess.add(new JBoxMemory("src/images/caixa.png",1, 5,""));	
 		
 		int tam = 8;
 	
@@ -154,7 +154,7 @@ public class Start  extends JFrame  {
 		pdf.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					desktop.open(new File("src/pesquisa.pdf"));
+					desktop.open(new File("src/pdf/pesquisa.pdf"));
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
